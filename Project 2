@@ -1,0 +1,32 @@
+from tkinter import *
+import random
+lower="qwertyuiopasdfghjklzxcvbnm"
+upper="QWERTYUIOPASDFGHJKLZXCVBNM"
+symbols="{}[]()><?/.,|\"':;!@#$%^&*"
+num="0123456789"
+def password():
+    a=t1.get()
+    b=int(t2.get())
+    p=""
+    for i in range(1,b+1):
+        w=random.choice(lower+upper+num+symbols)
+        p=p+w
+    x=p
+    l3.config(text=x)
+n=Tk()
+n.title("Project 2")
+h=Label(n,text="WELCOME TO PASSWORD GENERATOR")
+l1=Label(n,text="Enter your name")
+l2=Label(n,text="Enter password length")
+l3=Label(n,text=" ")
+t1=Entry(n)
+t2=Entry(n)
+b=Button(n,text="GENERATE PASSWORD",command=password)
+h.grid(row=0,column=0)
+l1.grid(row=1,column=0)
+t1.grid(row=1,column=1)
+l2.grid(row=2,column=0)
+t2.grid(row=2,column=1)
+b.grid(row=3,column=0)
+l3.grid(row=3,column=1)
+mainloop()
